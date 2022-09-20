@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Person", "Person", "{2DF739F8-ABE6-406F-82B2-EFBDF81D6CCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Report", "Report", "{0FC0A3BB-902E-4598-BFFC-AE56E54603F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{383B7442-8F9D-487A-AC18-0D54566DB75E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MT.PersonService.Core", "MT.PersonService.Core\MT.PersonService.Core.csproj", "{7BD6D68F-E7BC-4409-8C77-F4508E385ED5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BD6D68F-E7BC-4409-8C77-F4508E385ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD6D68F-E7BC-4409-8C77-F4508E385ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD6D68F-E7BC-4409-8C77-F4508E385ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD6D68F-E7BC-4409-8C77-F4508E385ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7BD6D68F-E7BC-4409-8C77-F4508E385ED5} = {2DF739F8-ABE6-406F-82B2-EFBDF81D6CCB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00A7A020-B5E6-4448-A3EC-F3D9F528E9E5}
+	EndGlobalSection
+EndGlobal
