@@ -43,7 +43,7 @@ namespace MT.PersonService.API
             services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("SqlSrvConStr"), o => o.MigrationsAssembly("MT.PersonService.Data")));
-            
+            services.AddControllers();
 
             services.AddMassTransit(cfg =>
             {
@@ -55,7 +55,7 @@ namespace MT.PersonService.API
             });
             services.AddMassTransitHostedService();
 
-            services.AddControllers();
+
 
             services.AddSwaggerGen(c =>
             {

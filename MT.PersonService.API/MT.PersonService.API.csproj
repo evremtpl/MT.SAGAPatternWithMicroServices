@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="ClosedXML" Version="0.95.4" />
     <PackageReference Include="MassTransit" Version="6.2.5" />
     <PackageReference Include="MassTransit.AspNetCore" Version="6.2.5" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.5" />
@@ -24,6 +25,10 @@
     <ProjectReference Include="..\MT.RabbitMqSaga\MT.RabbitMqSaga.csproj" />
     <ProjectReference Include="..\MT.RabbitMq\MT.RabbitMq.csproj" />
     <ProjectReference Include="..\MT.SagaMachine\MT.SagaMachine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>

@@ -47,6 +47,11 @@ namespace MT.ReportService.Data.Repositories
             return await _dbSet.FindAsync(id);
         }
 
+        public async  Task<TEntity> GetByIdAsync(Guid id)
+        {
+            return await _dbSet.FindAsync(id);
+        }
+
         public TEntity Update(TEntity entity)
         {
             _context.Entry(entity).State = EntityState.Modified;

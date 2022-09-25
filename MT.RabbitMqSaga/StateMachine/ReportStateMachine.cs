@@ -26,6 +26,10 @@ namespace MT.RabbitMqSaga.StateMachine
             context.Instance.UUId = context.Data.UUId;
             
         })
+                 .ThenAsync(
+                 context => Console.Out.WriteLineAsync($" {context.Data.ReportId} report Id is received..")
+
+                 )
                .TransitionTo(ReportStarted)
                .Publish(context => new ReportValidateEvent(context.Instance)));
 
@@ -33,9 +37,12 @@ namespace MT.RabbitMqSaga.StateMachine
                 When(ReportCancelledEvent)
                     .Then(context => context.Instance.ReportCancelledDate =
                         DateTime.Now)
+                    .ThenAsync(
+                    context => Console.Out.WriteLineAsync($" {context.Data.ReportId} report Id is cancelled.."))
                      .TransitionTo(ReportCancelled)
-                
+                .Finalize()
               );
+            SetCompletedWhenFinalized();
         }
 
 

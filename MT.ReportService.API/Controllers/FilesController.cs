@@ -22,9 +22,9 @@ namespace MT.ReportService.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Upload(IFormFile file, int fileId)
+        public async Task<IActionResult> Upload(IFormFile file, Guid fileId)
         {
-            if (file is not { Length: > 0 }) return BadRequest();
+            //if (file is not { Length: > 0 }) return BadRequest();
 
             var filePath = fileId.ToString() + "_" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + "_" + Path.GetExtension(file.FileName);
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\files", filePath);

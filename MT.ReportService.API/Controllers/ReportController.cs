@@ -72,7 +72,7 @@ namespace MT.ReportService.API.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetReport(int id) //db de Id var mı yok mu diye bir kontrol yapılmadı! Bir filter yazılabilir kod tekrarı olmaması için
+        public async Task<IActionResult> GetReport(Guid id) //db de Id var mı yok mu diye bir kontrol yapılmadı! Bir filter yazılabilir kod tekrarı olmaması için
         {
             var report = await _reportService.GetByIdAsync(id);
             if (report != null) { return Ok(_mapper.Map<ReportDto>(report)); }
