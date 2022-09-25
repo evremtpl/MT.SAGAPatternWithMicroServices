@@ -103,8 +103,15 @@ namespace MT.PersonService.Data.Migrations
                         {
                             UUID = 1,
                             Company = "xyz",
-                            Name = "Demir",
+                            Name = "merve",
                             SurName = "Çelik"
+                        },
+                        new
+                        {
+                            UUID = 2,
+                            Company = "xyz",
+                            Name = "Ipek",
+                            SurName = "Ipek"
                         });
                 });
 

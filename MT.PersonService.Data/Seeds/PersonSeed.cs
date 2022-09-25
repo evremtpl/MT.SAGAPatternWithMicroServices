@@ -23,11 +23,20 @@ namespace MT.PersonService.Data.Seeds
             builder.HasData(new Person
             {
                 UUID = _ids[0],
-                Name = "Demir",
+                Name = "merve",
                 SurName = "Çelik",
                 Company = "xyz"
 
-            });
+            },
+            new Person
+            {
+                UUID = _ids[1],
+                Name = "Ipek",
+                SurName = "Ipek",
+                Company = "xyz"
+
+            }
+            );
 
         }
     }

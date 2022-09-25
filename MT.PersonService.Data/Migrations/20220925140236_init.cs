@@ -2,7 +2,7 @@
 
 namespace MT.PersonService.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,7 +46,12 @@ namespace MT.PersonService.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Persons",
                 columns: new[] { "UUID", "Company", "Name", "SurName" },
-                values: new object[] { 1, "xyz", "Demir", "Çelik" });
+                values: new object[] { 1, "xyz", "merve", "Çelik" });
+
+            migrationBuilder.InsertData(
+                table: "Persons",
+                columns: new[] { "UUID", "Company", "Name", "SurName" },
+                values: new object[] { 2, "xyz", "Ipek", "Ipek" });
 
             migrationBuilder.InsertData(
                 table: "ContactInfos",

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MT.PersonService.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220921184113_initial")]
-    partial class initial
+    [Migration("20220925140236_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -105,8 +105,15 @@ namespace MT.PersonService.Data.Migrations
                         {
                             UUID = 1,
                             Company = "xyz",
-                            Name = "Demir",
+                            Name = "merve",
                             SurName = "Çelik"
+                        },
+                        new
+                        {
+                            UUID = 2,
+                            Company = "xyz",
+                            Name = "Ipek",
+                            SurName = "Ipek"
                         });
                 });
 
