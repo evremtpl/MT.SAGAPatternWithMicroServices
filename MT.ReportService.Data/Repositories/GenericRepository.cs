@@ -42,15 +42,12 @@ namespace MT.ReportService.Data.Repositories
             return await _dbSet.ToListAsync();
         }
 
-        public async Task<TEntity> GetByIdAsync(int id)
+        public async Task<TEntity> GetByIdAsync(string id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        public async  Task<TEntity> GetByIdAsync(Guid id)
-        {
-            return await _dbSet.FindAsync(id);
-        }
+     
 
         public TEntity Update(TEntity entity)
         {

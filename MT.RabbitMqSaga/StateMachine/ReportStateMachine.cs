@@ -1,7 +1,7 @@
 ﻿using Automatonymous;
 using MassTransit;
 using MT.RabbitMqMessage.Event;
-using MT.RabbitMqSaga.DbConfigurations;
+
 using System;
 
 
@@ -11,9 +11,9 @@ namespace MT.RabbitMqSaga.StateMachine
     {
         public ReportStateMachine()
         { 
-                Event(() => ReportStartedEvent, x => x.CorrelateById(m => m.Message.ReportId));
-
-                Event(() => ReportCancelledEvent, x => x.CorrelateById(m => m.Message.ReportId));
+                Event(() => ReportStartedEvent, x => x.CorrelateBy(state => state.ReportId, context=> context.Message.ReportId)
+            .SelectId(s => Guid.NewGuid()));
+                Event(() => ReportCancelledEvent, x => x.CorrelateById(m => m.Message.CorrelationId));
 
                 InstanceState(x => x.CurrentState);
 
@@ -21,11 +21,11 @@ namespace MT.RabbitMqSaga.StateMachine
            When(ReportStartedEvent)
                 .Then(context =>
                 {
-            context.Instance.ReportCreatedDate = DateTime.Now;
-            context.Instance.ReportId = context.Data.ReportId;
-            context.Instance.UUId = context.Data.UUId;
-            
-        })
+                    context.Instance.ReportCreatedDate = DateTime.Now;
+                    context.Instance.ReportId = context.Data.ReportId;
+                    context.Instance.UUId = context.Data.UUId;
+
+                })
                  .ThenAsync(
                  context => Console.Out.WriteLineAsync($" {context.Data.ReportId} report Id is received..")
 

@@ -14,7 +14,7 @@ namespace MT.ReportService.Core.Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public Guid ReportId { get; set; }
+        public string ReportId { get; set; }
         public int UUID { get; set; }
 
         public DateTime RequestDate { get; set; }

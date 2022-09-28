@@ -8,9 +8,10 @@ namespace MT.RabbitMqMessage.Event
 {
     public interface IReportValidateEvent
     {
-      
-        public Guid ReportId { get; }
-        public int UUId { get;  }
-       
+
+        public Guid CorrelationId { get; }
+        public string ReportId { get; }
+        public int UUId { get; }
+
     }
 }

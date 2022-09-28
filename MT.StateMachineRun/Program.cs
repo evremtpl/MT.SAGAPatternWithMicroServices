@@ -1,10 +1,9 @@
 ﻿using MassTransit;
-using MassTransit.EntityFrameworkCoreIntegration;
+
 using MassTransit.Saga;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
+
 using MT.RabbitMq;
-using MT.RabbitMqSaga.DbConfigurations;
+
 using MT.RabbitMqSaga.StateMachine;
 using System;
 using System.Reflection;

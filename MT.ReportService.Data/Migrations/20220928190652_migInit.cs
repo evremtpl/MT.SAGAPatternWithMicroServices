@@ -11,7 +11,7 @@ namespace MT.ReportService.Data.Migrations
                 name: "Reports",
                 columns: table => new
                 {
-                    ReportId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ReportId = table.Column<string>(type: "text", nullable: false),
                     UUID = table.Column<int>(type: "integer", nullable: false),
                     RequestDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),

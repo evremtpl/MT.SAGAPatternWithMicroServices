@@ -1,6 +1,6 @@
 ﻿
 using MT.RabbitMqMessage.Event;
-using MT.RabbitMqSaga.DbConfigurations;
+
 using System;
 
 
@@ -16,12 +16,12 @@ namespace MT.RabbitMqSaga.StateMachine
             _reportStateInstance = reportStateInstance;
         }
         
-        public Guid ReportId => _reportStateInstance.ReportId;
+        public string ReportId => _reportStateInstance.ReportId;
 
         public int UUId => _reportStateInstance.UUId;
 
-        
+        public Guid CorrelationId => _reportStateInstance.CorrelationId;
 
-        
+
     }
 }

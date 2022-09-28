@@ -22,7 +22,7 @@ namespace MT.ReportService.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Upload(IFormFile file, Guid fileId)
+        public async Task<IActionResult> Upload(IFormFile file, string fileId)
         {
             //if (file is not { Length: > 0 }) return BadRequest();
 

@@ -8,9 +8,10 @@ namespace MT.RabbitMqMessage.Event
 {
     public interface IReportStartedEvent
     {
-    
-        public Guid ReportId { get;  }
-        public int UUId { get;  }
-        
+
+       
+        public string ReportId { get; }
+        public int UUId { get; }
+
     }
 }
