@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit.AspNetCore" Version="6.2.5" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MT.RabbitMqMessage\MT.RabbitMqMessage.csproj" />
+    <ProjectReference Include="..\MT.RabbitMq\MT.RabbitMq.csproj" />
+  </ItemGroup>
+
+</Project>
