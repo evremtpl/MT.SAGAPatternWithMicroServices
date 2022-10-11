@@ -37,6 +37,7 @@ namespace MT.RabbitMqSaga.StateMachine
                 When(ReportCancelledEvent)
                     .Then(context =>
                     {
+                        context.Instance.CorrelationId = context.Data.CorrelationId;
                         context.Instance.ReportCancelledDate = DateTime.Now;
                         context.Instance.ReportId = context.Data.ReportId;
                         context.Instance.UUId = context.Data.UUId;

@@ -59,8 +59,9 @@ namespace MT.PersonService.API.Consumers
                         var reponse = await httpClient.PostAsync($"{baseUrl}?fileId={context.Message.ReportId}", multipartFormDataContent);
                         if (reponse.IsSuccessStatusCode)
                         {
-                            _logger.LogInformation($" File (Id={context.Message.ReportId} ) was created by successful");
-                           
+                            _logger.LogInformation($" File (Id={context.Message.ReportId} ) was created  successfully");
+                            await Console.Out.WriteAsync($" File (Id={context.Message.ReportId} ) was created by successfully " +
+                $"userId: {context.Message.UUId}");
                         }
 
                     }

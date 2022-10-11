@@ -16,15 +16,14 @@ namespace MT.ReportService.API.Consumers
         public async Task Consume(ConsumeContext<IReportCancelledEvent> context)
         {
             var data = context.Message;
-            Report report = new Report()
-            {
-                ReportState=FileStatus.Cancelled,
-                CancelledDate=System.DateTime.Now,
-                ReportId= data.ReportId,
-                UUID= data.UUId,
 
-            };
-            _reportService.Update(report); 
+            var updatedReport = await _reportService.GetByIdAsync(data.ReportId);
+            updatedReport.ReportState = FileStatus.Cancelled;
+            updatedReport.CancelledDate = System.DateTime.Now;
+             
+
+          
+            _reportService.Update(updatedReport); 
         }
     }
 }

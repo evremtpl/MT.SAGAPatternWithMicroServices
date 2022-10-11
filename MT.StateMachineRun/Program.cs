@@ -18,39 +18,6 @@ namespace MT.StateMachineRun
             var orderSaga = new ReportStateMachine();
             var repo = new InMemorySagaRepository<ReportStateInstance>();
 
-            //string connectionString = "server=.\\MERVESERVER; database=SAGAStateMachineDb; user id=sa; password=951413Mt.X";
-
-            //var builder = new HostBuilder()
-            //   .ConfigureServices((hostContext, services) =>
-            //   {
-            //       services.AddMassTransit(cfg =>
-            //       {
-            //           cfg.AddSagaStateMachine<ReportStateMachine, ReportStateInstance>()
-
-            //            .EntityFrameworkRepository(r =>
-            //            {
-            //                r.ConcurrencyMode = ConcurrencyMode.Pessimistic; // or use Optimistic, which requires RowVersion
-
-            //                r.AddDbContext<DbContext, ReportStateDbContext>((provider, builder) =>
-            //                {
-            //                    builder.UseSqlServer(connectionString
-            //                        , m =>
-            //                        {
-            //                            m.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name);
-            //                            m.MigrationsHistoryTable($"__{nameof(ReportStateDbContext)}");
-            //                        }
-            //                    );
-            //                });
-            //            });
-
-            //           cfg.AddBus(provider => RabbitMqBus.ConfigureBus(provider));
-            //       });
-
-
-            //   });
-
-
-
             var bus = RabbitMqBus.Instance
                  .ConfigureBus((cfg, host) =>
                  {

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MT.RabbitMq;
 using MT.RabbitMqMessage;
+using MT.RabbitMqMessage.Event;
 using MT.ReportService.API.Consumers;
 using MT.ReportService.Core.Interfaces.Repositories;
 using MT.ReportService.Core.Interfaces.Services;
@@ -58,8 +59,8 @@ namespace MT.ReportService.API
             services.TryAddSingleton(KebabCaseEndpointNameFormatter.Instance);
             services.AddMassTransit(cfg =>
             {
-                cfg.AddRequestClient<IStartReport>();
-
+                cfg.AddRequestClient<IStartReport>(); 
+                 cfg.AddRequestClient<IReportCancelledEvent>();
                 cfg.AddConsumer<StartReportConsumer>();
                 cfg.AddConsumer<ReportCancelledConsumer>();
 
