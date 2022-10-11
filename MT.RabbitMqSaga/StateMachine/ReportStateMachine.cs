@@ -35,13 +35,17 @@ namespace MT.RabbitMqSaga.StateMachine
 
             During(ReportStarted,
                 When(ReportCancelledEvent)
-                    .Then(context => context.Instance.ReportCancelledDate =
-                        DateTime.Now)
+                    .Then(context =>
+                    {
+                        context.Instance.ReportCancelledDate = DateTime.Now;
+                        context.Instance.ReportId = context.Data.ReportId;
+                        context.Instance.UUId = context.Data.UUId;
+                    })
                     .ThenAsync(
                     context => Console.Out.WriteLineAsync($" {context.Data.ReportId} report Id is cancelled.."))
                      .TransitionTo(ReportCancelled)
                 .Finalize()
-              );
+              ); ;
             SetCompletedWhenFinalized();
         }
 

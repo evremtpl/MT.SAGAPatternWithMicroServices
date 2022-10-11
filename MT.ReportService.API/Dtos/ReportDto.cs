@@ -12,7 +12,7 @@ namespace MT.ReportService.API.Dtos
     {
         public Guid ReportId { get; set; }
         public int UUID { get; set; }
-
+        public DateTime? RequestDate { get; set; }
 
         public FileStatus ReportState { get; set; }
     }

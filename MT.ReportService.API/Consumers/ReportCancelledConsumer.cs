@@ -19,11 +19,12 @@ namespace MT.ReportService.API.Consumers
             Report report = new Report()
             {
                 ReportState=FileStatus.Cancelled,
+                CancelledDate=System.DateTime.Now,
                 ReportId= data.ReportId,
                 UUID= data.UUId,
 
             };
-            _reportService.Delete(report); 
+            _reportService.Update(report); 
         }
     }
 }

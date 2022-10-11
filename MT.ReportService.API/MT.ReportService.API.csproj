@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -22,7 +22,10 @@
     <ProjectReference Include="..\MT.ReportService.Core\MT.ReportService.Core.csproj" />
     <ProjectReference Include="..\MT.ReportService.Data\MT.ReportService.Data.csproj" />
     <ProjectReference Include="..\MT.ReportService.Service\MT.ReportService.Service.csproj" />
-    <ProjectReference Include="..\MT.SagaMachine\MT.SagaMachine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\files\" />
   </ItemGroup>
 
 </Project>

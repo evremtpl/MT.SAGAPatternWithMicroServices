@@ -62,7 +62,7 @@ namespace MT.StateMachineRun
 
                  });
             bus.StartAsync();
-            Console.WriteLine("Order Saga Started");
+            Console.WriteLine("Report Saga Started");
             Console.ReadLine();
 
         }

@@ -36,13 +36,14 @@ namespace MT.ReportService.API.Controllers
         {
             reportModel.ReportId = Guid.NewGuid();
             reportModel.ReportState = Dtos.FileStatus.Creating;
-            var endpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri("queue:" + BusConstants.StartReportQueue));
+            reportModel.RequestDate = DateTime.Now; 
+            var endpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri("queue:" + BusConstants.ReportQueue));
 
-          var reportId= await _reportService.AddAsync(_mapper.Map<Report>(reportModel));
+           await _reportService.AddAsync(_mapper.Map<Report>(reportModel));
 
             await endpoint.Send<IStartReport>(new
             {
-                ReportId = reportId,
+                ReportId = reportModel.ReportId,
                 UUId = reportModel.UUID,
                 ReportCreatedDate = DateTime.Now,
             });

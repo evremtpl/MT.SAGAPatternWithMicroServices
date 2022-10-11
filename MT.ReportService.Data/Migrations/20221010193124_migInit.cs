@@ -15,6 +15,7 @@ namespace MT.ReportService.Data.Migrations
                     UUID = table.Column<int>(type: "integer", nullable: false),
                     RequestDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    CancelledDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     ReportState = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>

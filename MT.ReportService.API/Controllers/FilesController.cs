@@ -47,8 +47,7 @@ namespace MT.ReportService.API.Controllers
 
             report.CreatedDate = DateTime.Now;
             report.ReportState = FileStatus.Completed;
-
-            var updatedReport = _reportService.Update(report);
+             _reportService.Update(report);
 
             return Ok();
         }

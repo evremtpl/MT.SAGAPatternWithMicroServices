@@ -21,6 +21,7 @@ namespace MT.ReportService.Core.Entity
 
 
         public DateTime CreatedDate { get; set; }
+        public DateTime CancelledDate { get; set; }
 
         public FileStatus ReportState { get; set; }
 

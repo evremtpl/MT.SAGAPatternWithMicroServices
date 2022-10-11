@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="ClosedXML" Version="0.95.4" />
@@ -24,11 +31,6 @@
     <ProjectReference Include="..\MT.RabbitMqMessage\MT.RabbitMqMessage.csproj" />
     <ProjectReference Include="..\MT.RabbitMqSaga\MT.RabbitMqSaga.csproj" />
     <ProjectReference Include="..\MT.RabbitMq\MT.RabbitMq.csproj" />
-    <ProjectReference Include="..\MT.SagaMachine\MT.SagaMachine.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
