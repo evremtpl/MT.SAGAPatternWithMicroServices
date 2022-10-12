@@ -45,7 +45,7 @@ namespace MT.ReportService.API.Controllers
 
             var report = await _reportService.GetByIdAsync(fileId);
 
-            report.CreatedDate = DateTime.Now;
+            
             report.ReportState = FileStatus.Completed;
              _reportService.Update(report);
 
