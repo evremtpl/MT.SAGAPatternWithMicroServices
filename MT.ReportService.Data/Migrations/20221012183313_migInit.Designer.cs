@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MT.ReportService.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221010193124_migInit")]
+    [Migration("20221012183313_migInit")]
     partial class migInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,9 +27,6 @@ namespace MT.ReportService.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CancelledDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("ReportState")

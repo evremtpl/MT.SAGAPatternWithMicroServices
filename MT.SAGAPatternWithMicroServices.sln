@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{383B7442-8F9D-487A-AC18-0D54566DB75E}"
 	ProjectSection(SolutionItems) = preProject
 		Ports.txt = Ports.txt
+		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MT.PersonService.Core", "MT.PersonService.Core\MT.PersonService.Core.csproj", "{7BD6D68F-E7BC-4409-8C77-F4508E385ED5}"

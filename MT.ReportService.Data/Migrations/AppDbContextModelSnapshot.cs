@@ -27,9 +27,6 @@ namespace MT.ReportService.Data.Migrations
                     b.Property<DateTime>("CancelledDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
                     b.Property<int>("ReportState")
                         .HasColumnType("integer");
 
