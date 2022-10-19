@@ -23,8 +23,8 @@ namespace MT.PersonService.Data.Seeds
             builder.HasData(new Person
             {
                 UUID = _ids[0],
-                Name = "merve",
-                SurName = "Çelik",
+                Name = "Abraham",
+                SurName = "Lincoln",
                 Company = "xyz"
 
             },
@@ -35,7 +35,15 @@ namespace MT.PersonService.Data.Seeds
                 SurName = "Ipek",
                 Company = "xyz"
 
-            }
+            },
+                new Person
+                {
+                    UUID = _ids[2],
+                    Name = "Isaac",
+                    SurName = "Newton",
+                    Company = "xyz"
+
+                }
             );
 
         }

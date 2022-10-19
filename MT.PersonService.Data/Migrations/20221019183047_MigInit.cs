@@ -2,7 +2,7 @@
 
 namespace MT.PersonService.Data.Migrations
 {
-    public partial class init : Migration
+    public partial class MigInit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,12 +46,17 @@ namespace MT.PersonService.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Persons",
                 columns: new[] { "UUID", "Company", "Name", "SurName" },
-                values: new object[] { 1, "xyz", "merve", "Çelik" });
+                values: new object[] { 1, "xyz", "Abraham", "Lincoln" });
 
             migrationBuilder.InsertData(
                 table: "Persons",
                 columns: new[] { "UUID", "Company", "Name", "SurName" },
                 values: new object[] { 2, "xyz", "Ipek", "Ipek" });
+
+            migrationBuilder.InsertData(
+                table: "Persons",
+                columns: new[] { "UUID", "Company", "Name", "SurName" },
+                values: new object[] { 3, "xyz", "Isaac", "Newton" });
 
             migrationBuilder.InsertData(
                 table: "ContactInfos",
@@ -61,7 +66,12 @@ namespace MT.PersonService.Data.Migrations
             migrationBuilder.InsertData(
                 table: "ContactInfos",
                 columns: new[] { "id", "Email", "Location", "PhoneNumber", "UUID" },
-                values: new object[] { 2, "xyz@any.com", "Ankara", "05554443231", 1 });
+                values: new object[] { 2, "xyz@any.com", "Ankara", "05554443211", 2 });
+
+            migrationBuilder.InsertData(
+                table: "ContactInfos",
+                columns: new[] { "id", "Email", "Location", "PhoneNumber", "UUID" },
+                values: new object[] { 3, "xyz@any.com", "Ankara", "05554443231", 3 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ContactInfos_UUID",
