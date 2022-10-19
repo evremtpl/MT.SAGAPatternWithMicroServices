@@ -65,8 +65,16 @@ namespace MT.PersonService.Data.Migrations
                             id = 2,
                             Email = "xyz@any.com",
                             Location = "Ankara",
+                            PhoneNumber = "05554443211",
+                            UUID = 2
+                        },
+                        new
+                        {
+                            id = 3,
+                            Email = "xyz@any.com",
+                            Location = "Ankara",
                             PhoneNumber = "05554443231",
-                            UUID = 1
+                            UUID = 3
                         });
                 });
 
@@ -103,8 +111,8 @@ namespace MT.PersonService.Data.Migrations
                         {
                             UUID = 1,
                             Company = "xyz",
-                            Name = "merve",
-                            SurName = "Çelik"
+                            Name = "Abraham",
+                            SurName = "Lincoln"
                         },
                         new
                         {
@@ -112,6 +120,13 @@ namespace MT.PersonService.Data.Migrations
                             Company = "xyz",
                             Name = "Ipek",
                             SurName = "Ipek"
+                        },
+                        new
+                        {
+                            UUID = 3,
+                            Company = "xyz",
+                            Name = "Isaac",
+                            SurName = "Newton"
                         });
                 });
 

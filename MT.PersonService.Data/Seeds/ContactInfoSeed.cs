@@ -27,10 +27,18 @@ namespace MT.PersonService.Data.Seeds
             new ContactInfo
             {
                 id = 2,
+                PhoneNumber = "05554443211",
+                Email = "xyz@any.com",
+                Location = "Ankara",
+                UUID = _ids[1]
+            },
+            new ContactInfo
+            {
+                id = 3,
                 PhoneNumber = "05554443231",
                 Email = "xyz@any.com",
                 Location = "Ankara",
-                UUID = _ids[0]
+                UUID = _ids[2]
             });
         }
     }
