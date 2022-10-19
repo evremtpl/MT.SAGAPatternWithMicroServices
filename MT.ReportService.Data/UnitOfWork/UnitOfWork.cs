@@ -22,12 +22,59 @@ namespace MT.ReportService.Data.UnitOfWork
 
         public void Commit()
         {
-            _appDbContext.SaveChanges();
+           
+                try
+                {
+                    using (var transaction = _appDbContext.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                        _appDbContext.SaveChanges();
+                            transaction.Commit();
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    //TODO:Logging
+                }
+
+
+
+
+
         }
 
         public async Task CommitAsync()
         {
-            await _appDbContext.SaveChangesAsync();
+
+            try
+            {
+                using (var transaction = _appDbContext.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        await _appDbContext.SaveChangesAsync();
+                        transaction.Commit();
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                //TODO:Logging
+            }
+
+            
         }
     }
 }

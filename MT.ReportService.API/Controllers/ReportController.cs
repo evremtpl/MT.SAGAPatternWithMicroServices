@@ -32,7 +32,7 @@ namespace MT.ReportService.API.Controllers
         }
         [HttpPost]
         [Route("createreport")]
-        public async Task<IActionResult> CreateReportUsingStateMachineInDb([FromBody] ReportDto reportModel)
+        public async Task<IActionResult> CreateReportUsingStateMachine([FromBody] ReportDto reportModel)
         {
             reportModel.ReportId = Guid.NewGuid();
             reportModel.ReportState = Dtos.FileStatus.Creating;
