@@ -35,7 +35,7 @@ namespace MT.ReportService.Data.UnitOfWork
                         catch
                         {
                             transaction.Rollback();
-                            throw;
+                            
                         }
                     }
                 }
@@ -65,7 +65,7 @@ namespace MT.ReportService.Data.UnitOfWork
                     catch
                     {
                         transaction.Rollback();
-                        throw;
+                       
                     }
                 }
             }
