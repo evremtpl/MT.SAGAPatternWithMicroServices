@@ -18,7 +18,7 @@ using MT.PersonService.Data.Repositories;
 using MT.PersonService.Data.UnitOfWork;
 using MT.PersonService.Service.Services;
 using MT.RabbitMq;
-
+using MT.RabbitMqMessage.Event;
 namespace MT.PersonService.API
 {
     public class Startup
@@ -47,6 +47,7 @@ namespace MT.PersonService.API
 
             services.AddMassTransit(cfg =>
             {
+                cfg.AddRequestClient<IReportCancelledEvent>();
                 cfg.AddConsumer<ReportValidateConsumer>();
 
                 cfg.AddBus(provider => RabbitMqBus.ConfigureBus(provider, (cfg, host) =>
